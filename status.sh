@@ -232,7 +232,7 @@ User=root
 Group=root
 Environment="RUST_BACKTRACE=1"
 WorkingDirectory=${working_dir}
-ExecStart=$client_file -a "${PROTOCOL}://${MASTER}" -u ${USER} -p ${PASSWD}
+ExecStart=$client_file -a "${PROTOCOL}://${MASTER}" -u ${USER} -p ${PASSWD} --disable-tupd -n --disable-ping
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure
 
